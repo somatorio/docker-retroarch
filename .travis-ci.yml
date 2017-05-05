@@ -1,0 +1,10 @@
+services:
+  - docker
+
+script:
+  - docker run --rm -v $(pwd):/workdir -w /workdir replicated/dockerfilelint Dockerfile
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      curl -X POST https://registry.hub.docker.com/u/somatorio/retroarch/trigger/d89d59d5-a5d2-410d-a604-8b04930c1dca/
+    fi

@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Marco Antonio Martins Junior <somatorio@gmail.com>
+LABEL maintainer="Marco Antonio Martins Junior <somatorio@gmail.com>"
 
 RUN \
   echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sources.list.d/multiverse.list && \
